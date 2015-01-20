@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20141216065311) do
 
   create_table "users", force: true do |t|
     t.integer  "users_id"
+    t.text     "users_name"
+    t.text     "users_mail"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
