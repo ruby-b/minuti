@@ -13,6 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require cerulean/loader
-//= require cerulean/bootswatch
 
