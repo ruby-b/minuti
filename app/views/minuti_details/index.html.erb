@@ -1,0 +1,33 @@
+<h1>Listing minuti_details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Minutis</th>
+      <th>Minuti details d</th>
+      <th>Category</th>
+      <th>Body</th>
+      <th>Del</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @minuti_details.each do |minuti_detail| %>
+      <tr>
+        <td><%= minuti_detail.minutis_id %></td>
+        <td><%= minuti_detail.minuti_details_d %></td>
+        <td><%= minuti_detail.category %></td>
+        <td><%= minuti_detail.body %></td>
+        <td><%= minuti_detail.del %></td>
+        <td><%= link_to 'Show', minuti_detail %></td>
+        <td><%= link_to 'Edit', edit_minuti_detail_path(minuti_detail) %></td>
+        <td><%= link_to 'Destroy', minuti_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Minuti detail', new_minuti_detail_path %>

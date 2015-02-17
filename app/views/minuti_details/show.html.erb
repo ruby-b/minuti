@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Minutis:</strong>
+  <%= @minuti_detail.minutis_id %>
+</p>
+
+<p>
+  <strong>Minuti details d:</strong>
+  <%= @minuti_detail.minuti_details_d %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @minuti_detail.category %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @minuti_detail.body %>
+</p>
+
+<p>
+  <strong>Del:</strong>
+  <%= @minuti_detail.del %>
+</p>
+
+<%= link_to 'Edit', edit_minuti_detail_path(@minuti_detail) %> |
+<%= link_to 'Back', minuti_details_path %>

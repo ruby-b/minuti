@@ -1,0 +1,37 @@
+<%= form_for(@minuti_detail) do |f| %>
+  <% if @minuti_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@minuti_detail.errors.count, "error") %> prohibited this minuti_detail from being saved:</h2>
+
+      <ul>
+      <% @minuti_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :minutis_id %><br>
+    <%= f.number_field :minutis_id %>
+  </div>
+  <div class="field">
+    <%= f.label :minuti_details_d %><br>
+    <%= f.number_field :minuti_details_d %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.number_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_field :body %>
+  </div>
+  <div class="field">
+    <%= f.label :del %><br>
+    <%= f.check_box :del %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
