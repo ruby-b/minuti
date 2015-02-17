@@ -26,7 +26,7 @@
   <div>
     Group<br>
     <%= f.fields_for :group_users do |gu| %>
-      <%= gu.select :group_id, @group.all.map{|g| [g.group_name,g.group_id]} %>
+      <%= gu.select :id, @group.all.map{|g| [g.group_name,g.id]} %>
     <% end %>
   <div class="actions">
     <%= f.submit %>

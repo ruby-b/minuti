@@ -30,9 +30,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+    gparams = params.require(:user).require(:group_users).permit(:id)
+    group = Group.find(gparams[:id].to_i)
+    @user.groups << group
     respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+      if @user.save 
+       	format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
