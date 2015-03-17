@@ -25,7 +25,7 @@ class GroupsController < ApplicationController
   # POST /groups.json
   def create
     @group = Group.new(group_params)
-    @group[:group_id] = 1 
+    @group[:id] = 1 
     respond_to do |format|
       if @group.save
         format.html { redirect_to @group, notice: 'Group was successfully created.' }
@@ -40,7 +40,7 @@ class GroupsController < ApplicationController
   # PATCH/PUT /groups/1
   # PATCH/PUT /groups/1.json
   def update
-    @group[:group_id] = @group[:group_id].blank? ? 1 : @group[:group_id] + 1 
+    @group[:id] = @group[:id].blank? ? 1 : @group[:id] + 1 
     respond_to do |format|
       if @group.update(group_params)
         format.html { redirect_to @group, notice: 'Group was successfully updated.' }

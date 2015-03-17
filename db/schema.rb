@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20150317052442) do
   add_index "group_users", ["user_id"], name: "index_group_users_on_user_id"
 
   create_table "groups", force: true do |t|
-    t.integer  "group_id"
     t.text     "group_name"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -39,11 +38,7 @@ ActiveRecord::Schema.define(version: 20150317052442) do
   end
 
   create_table "users", force: true do |t|
-    t.integer  "user_id"
-    t.text     "user_name"
-    t.text     "user_mail"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "user_name",              default: "", null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
