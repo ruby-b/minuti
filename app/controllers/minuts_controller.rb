@@ -15,10 +15,13 @@ class MinutsController < ApplicationController
   # GET /minuts/new
   def new
     @minut = Minut.new
+    @minut.minuti_details.build
+    @users = User.all
   end
 
   # GET /minuts/1/edit
   def edit
+    @users = User.all
   end
 
   # POST /minuts
@@ -69,6 +72,6 @@ class MinutsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def minut_params
-      params.require(:minut).permit(:user_id, :minuti_id, :title, :body, :del)
+      params.require(:minut).permit(:title, :body, authors_attributes: [:minut_id, :user_id])
     end
 end
