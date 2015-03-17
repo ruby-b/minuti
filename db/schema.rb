@@ -39,11 +39,6 @@ ActiveRecord::Schema.define(version: 20150317052442) do
   end
 
   create_table "users", force: true do |t|
-    t.integer  "user_id"
-    t.text     "user_name"
-    t.text     "user_mail"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
