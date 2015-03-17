@@ -41,20 +41,6 @@
    <div class="navbar navbar-default navbar-static-top">
       <div class="container">
 
-<p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-
-
-
-
-
 
 
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -65,9 +51,18 @@
         <a class="navbar-brand" href="#">Minuti</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "会員登録", "/users"  %></li>
             <li><%= link_to "グループ登録", "/groups"  %></li>
             <li><%= link_to "議事録登録", "/minuts"  %></li>
+	  </ul>
+	  <ul style="text-align: right;">
+	    <% if user_signed_in? %>	    
+              Logged in as <strong><%= current_user.email %></strong>.
+              <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+            <% else %>
+	      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+	      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+            <% end %>
           </ul>
         </div>
       </div>
