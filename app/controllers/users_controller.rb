@@ -50,6 +50,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       gparams = params.require(:user).require(:group_users).permit(:id)
       group = Group.find(gparams[:id].to_i)
+      @user.groups.clear
       @user.groups << group
  
       if @user.update(user_params)
