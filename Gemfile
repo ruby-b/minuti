@@ -46,3 +46,6 @@ gem 'spring',        group: :development
 
 # Twittr Bootstrap
 gem 'twitter-bootstrap-rails'
+
+#devise
+gem 'devise'
