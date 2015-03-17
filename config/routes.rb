@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
+
   resources :groups
 
   resources :users
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
   resources :minuti_details
 
   resources :minuts
+
+  root 'users#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
