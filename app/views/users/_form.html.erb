@@ -21,8 +21,8 @@
   </div>
   <div>
     Group<br>
-    <%= f.fields_for :group_users do |gu| %>
-      <%= gu.select :id, @group.all.map{|g| [g.group_name,g.id]} %>
+    <%= f.fields_for :group_users[] do |gu| %>
+	    <%= gu.select :id, @group.all.map{|g| [g.group_name,g.id]},{:multiple => true} %>
     <% end %>
   <div class="actions">
     <%= f.submit %>
