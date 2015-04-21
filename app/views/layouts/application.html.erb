@@ -51,7 +51,8 @@
         <a class="navbar-brand" href="/">Minuti</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "議事録登録", "/minuts"  %></li>
+            <li><%= link_to "議事録登録", "/minuts/new"  %></li>
+            <li><%= link_to "議事録検索", "/minuts"  %></li>
 	    <% if user_signed_in? %>	    
 		    <li><a href="#">ようこそ <%= current_user.email %>.</a></li>
 		    <li><%= link_to 'ユーザー情報変更', edit_user_registration_path, :class => 'navbar-link' %></li>
@@ -76,14 +77,17 @@
           <div class="well sidebar-nav">
             <h3>機能説明</h3>
             <ul class="nav nav-list">
-              <li class="nav-header">会員登録</li>
-	      <li>閲覧出来る会員を登録します</li>
+              <li class="nav-header"><%= link_to "ユーザー登録", new_user_registration_path, :class => 'navbar-link'  %></li>
+	      <li>本機能を利用するユーザーを登録します</li>
 	      <li></li>
-              <li class="nav-header">グループ登録</li>
-              <li>会員をグループ登録します</li>
+      <li class="nav-header"><%= link_to 'ユーザー情報変更', edit_user_registration_path, :class => 'navbar-link' %></li>
+	      <li>登録情報の変更及び退会処理</li>
 	      <li></li>
-              <li class="nav-header">議事録登録</li>
-              <li>議事録の登録・編集を行います</li>
+	      <li class="nav-header"><%= link_to "議事録登録", "/minuts/new"  %></li>
+              <li>議事録の登録を行います</li>
+	      <li></li>
+	      <li class="nav-header"><%= link_to "議事録検索", "/minuts"  %></li>
+              <li>閲覧権限登録された議事録を一覧表示します</li>
             
             </ul>
           </div><!--/.well -->
