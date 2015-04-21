@@ -1,4 +1,3 @@
 class Minut < ActiveRecord::Base
-    has_many :minuti_details
-    accepts_nested_attributes_for :minuti_details
+    has_many :minuti_details, dependent: :destroy
 end
