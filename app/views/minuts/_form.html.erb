@@ -23,7 +23,7 @@
      <%= f.label "参照権限" %>
      <br>
      <% @users.each do |user| %>
-      <%= f.check_box :id, {:user_id => "grouping[user_id][]"}, user.id %>
+      <%= f.check_box :id, {multiple: true}, user.id, nil %>
       <%= f.label :user_id, user.user_name, :value => user.id %>
       <br>
      <% end %>   
