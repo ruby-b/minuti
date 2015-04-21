@@ -32,6 +32,7 @@ class MinutsController < ApplicationController
    # user = User.find(user_id)
    # @minut.minuti_details.build(user_id: user)
 
+    @users = User.all
     respond_to do |format|
       if @minut.save
         format.html { redirect_to @minut, notice: 'Minut was successfully created.' }

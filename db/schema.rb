@@ -36,8 +36,6 @@ ActiveRecord::Schema.define(version: 20150317054441) do
   end
 
   create_table "minuts", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "minuti_id"
     t.string   "title"
     t.string   "body"
     t.datetime "created_at"
