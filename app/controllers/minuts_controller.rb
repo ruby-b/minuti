@@ -4,7 +4,7 @@ class MinutsController < ApplicationController
   # GET /minuts
   # GET /minuts.json
   def index
-    @minuts = Minut.all
+    @minuts  = Minut.joins(:users).where("users.id = ?", current_user)
   end
 
   # GET /minuts/1
@@ -15,24 +15,28 @@ class MinutsController < ApplicationController
   # GET /minuts/new
   def new
     @minut = Minut.new
-    @minut.minuti_details.build
-    @users = User.all
+    @users = User.where.not("id = ?", current_user)
   end
 
   # GET /minuts/1/edit
   def edit
-    @users = User.all
+    @users = User.where.not("id = ?", current_user)
   end
 
   # POST /minuts
   # POST /minuts.json
   def create
     @minut = Minut.new(minut_params)
+    @minut = Minut.new(minut_params)
     user_id = params[:minut][:id]
-    #user = User.find(user_id)
-    #@minut.minuti_details.build(user_id: user)
-
-    @users = User.all
+    if user_id
+      user = User.find(user_id) # 権限情報追加（本人）
+      @minut.users << user
+    end 
+    user = User.find(current_user) # 権限情報追加（選択分）
+    @minut.users << user
+    @users = User.where.not("id = ?", current_user)
+    
     respond_to do |format|
       if @minut.save
         format.html { redirect_to @minut, notice: 'Minut was successfully created.' }
