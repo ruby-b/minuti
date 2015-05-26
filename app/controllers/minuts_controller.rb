@@ -51,8 +51,19 @@ class MinutsController < ApplicationController
   # PATCH/PUT /minuts/1
   # PATCH/PUT /minuts/1.json
   def update
+    @minut = Minut.new(minut_params)
+    minutdel = Minut.find(params[:id])
+    minutdel.delete
+    user_id = params[:minut][:id]
+    if user_id
+      user = User.find(user_id) # 権限情報追加（選択分）
+      @minut.users << user
+    end
+    user = User.find(current_user) # 権限情報追加（本人分）
+    @minut.users << user
+    @users = User.where.not("id = ?", current_user)
     respond_to do |format|
-      if @minut.update(minut_params)
+      if @minut.save
         format.html { redirect_to @minut, notice: 'Minut was successfully updated.' }
         format.json { render :show, status: :ok, location: @minut }
       else
