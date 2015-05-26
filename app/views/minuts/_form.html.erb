@@ -1,7 +1,8 @@
 <%= simple_form_for(@minut, :html => { :class => 'form-horizontal'}) do |f| %>
   <% if @minut.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@minut.errors.count, "error") %> prohibited this minut from being saved:</h2>
+      <!--<h2><%= pluralize(@minut.errors.count, "error") %> prohibited this minut from being saved:</h2>-->
+      <h2><%= @minut.errors.count %>件のエラーがあります。修正して再度送信して下さい。</h2> 
 
       <ul>
       <% @minut.errors.full_messages.each do |message| %>

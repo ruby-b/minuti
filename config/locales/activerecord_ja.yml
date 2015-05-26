@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      minut: 議事録データ
+      user: ユーザーデータ
+
+    attributes:
+      minut:
+        title: タイトル
+
+      user:
+        user_name: お名前
+        email: Ｅメール
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: パスワード再入力
