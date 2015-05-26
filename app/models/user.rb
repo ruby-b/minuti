@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :group_users, :dependent => :delete_all
   has_many :groups, :through => :group_users
-  has_many :minuti_details
+  has_and_belongs_to_many :minuts
   #Validates
   validates_presence_of :user_name
 end
