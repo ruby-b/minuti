@@ -29,8 +29,8 @@ class MinutsController < ApplicationController
   def create
     @minut = Minut.new(minut_params)
     user_id = params[:minut][:id]
-    user = User.find(user_id)
-    @minut.minuti_details.build(user_id: user)
+    #user = User.find(user_id)
+    #@minut.minuti_details.build(user_id: user)
 
     @users = User.all
     respond_to do |format|

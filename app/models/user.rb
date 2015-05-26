@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
   has_many :group_users, :dependent => :delete_all
   has_many :groups, :through => :group_users
   has_many :minuti_details
+  #Validates
+  validates_presence_of :user_name
 end
