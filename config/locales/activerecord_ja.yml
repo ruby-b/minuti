@@ -1,5 +1,9 @@
 ja:
   activerecord:
+    models:
+      minut: 議事録データ
+      user: ユーザーデータ
+
     attributes:
       minut:
         title: タイトル
