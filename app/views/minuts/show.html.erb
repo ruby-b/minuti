@@ -1,14 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>タイトル:</strong>
-  <%= @minut.title %>
-</p>
-<p>
-  <strong>本文:</strong>
-  <%= @minut.body %>
-</p>
-
-
-<%= link_to '修正', edit_minut_path(@minut) %> |
-<%= link_to '戻る', minuts_path %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h4><%= t('.sign_up', :default => @minut.title) %></h4>
+  </div>
+  <div class="panel-body">
+	<p>
+  	<%= @minut.body %>
+	</p>
+  </div>
+</div>
+  
+<%= link_to '修正', edit_minut_path(@minut), { :class => 'btn btn-info'} %> |
+<%= link_to '戻る', minuts_path, { :class => 'btn btn-info'} %>
