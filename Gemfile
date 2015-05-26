@@ -44,8 +44,14 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+#less
+gem 'less-rails'
+
 # Twittr Bootstrap
 gem 'twitter-bootstrap-rails'
+
+# Simple Form
+gem 'simple_form'
 
 #devise install
 gem 'devise'
